@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huazai.dao.MoocsheaderMapper" >
+  <resultMap id="BaseResultMap" type="com.huazai.entity.Moocsheader" >
+    <id column="heaid" property="heaid" jdbcType="INTEGER" />
+    <result column="insexName" property="insexname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    heaid, insexName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from moocsheader
+    where heaid = #{heaid,jdbcType=INTEGER}
+  </select>
+  <select id="findClientList" parameterType="com.huazai.entity.Moocsheader" resultMap="BaseResultMap">
+ 			select * from moocsheader where 1 = 1
+ 			<if test="heaid!=null">
+ 				and heaid = #{heaid}
+ 			</if>
+ 	</select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from moocsheader
+    where heaid = #{heaid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.huazai.entity.Moocsheader" >
+    insert into moocsheader (heaid, insexName)
+    values (#{heaid,jdbcType=INTEGER}, #{insexname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huazai.entity.Moocsheader" >
+    insert into moocsheader
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="heaid != null" >
+        heaid,
+      </if>
+      <if test="insexname != null" >
+        insexName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="heaid != null" >
+        #{heaid,jdbcType=INTEGER},
+      </if>
+      <if test="insexname != null" >
+        #{insexname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huazai.entity.Moocsheader" >
+    update moocsheader
+    <set >
+      <if test="insexname != null" >
+        insexName = #{insexname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where heaid = #{heaid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huazai.entity.Moocsheader" >
+    update moocsheader
+    set insexName = #{insexname,jdbcType=VARCHAR}
+    where heaid = #{heaid,jdbcType=INTEGER}
+  </update>
+</mapper>

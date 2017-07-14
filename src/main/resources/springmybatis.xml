@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+		<context:component-scan base-package="com.huazai"></context:component-scan>
+		<!-- 引入资源配置文件 -->
+		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="locations" value="classpath:springMysql.properties"></property>
+		</bean>
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="username" value="${jdbc.username}"></property>
+			<property name="password" value="${jdbc.password}"></property>
+			<property name="url" value="${jdbc.url}"></property>
+			<property name="driverClassName" value="${jdbc.driverClass}"></property>
+			<property name="initialSize" value="${jdbc.initialSize}"></property>
+			<property name="maxActive" value="${jdbc.maxActive}"></property>
+			<property name="maxIdle" value="${jdbc.maxIdle}"></property>
+			<property name="minIdle" value="${jdbc.minIdle}"></property>
+			<property name="maxWait" value="${jdbc.maxWait}"></property>
+		</bean>
+		<!-- spring完美整合mybatis 不需要mybatis映射配置文件 -->
+		<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"></property>
+			<property name="mapperLocations" value="classpath:com/huazai/mapping/*.xml"></property>
+		</bean>
+		<!-- dao接口所在的包名    会自动配置下面所有的类 -->
+		<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+			<property name="basePackage" value="com.huazai.dao"></property>
+			<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>
+		</bean>
+		<!-- 配置事物管理 -->
+		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource"></property>
+		</bean>
+</beans>

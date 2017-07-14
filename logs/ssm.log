@@ -1,0 +1,341 @@
+[INFO] [2017-07-14 11:12:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 11:12:33][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@b97c004: startup date [Fri Jul 14 11:12:33 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 11:12:33][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 11:12:33][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 11:12:33][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [ERROR] [2017-07-14 11:12:33][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@609db43b] to prepare test instance [mucoosSSmTest.moccesTest@55f616cf]
+  java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.jdbc.datasource.DataSourceTransactionManager#0' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.String' to required type 'javax.sql.DataSource' for property 'dataSource'; nested exception is java.lang.IllegalStateException: Cannot convert value of type [java.lang.String] to required type [javax.sql.DataSource] for property 'dataSource': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.String' to required type 'javax.sql.DataSource' for property 'dataSource'; nested exception is java.lang.IllegalStateException: Cannot convert value of type [java.lang.String] to required type [javax.sql.DataSource] for property 'dataSource': no matching editors or conversion strategy found
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:474)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:511)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:505)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1502)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1461)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	... 39 more
+Caused by: java.lang.IllegalStateException: Cannot convert value of type [java.lang.String] to required type [javax.sql.DataSource] for property 'dataSource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:267)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:459)
+	... 45 more
+[INFO] [2017-07-14 11:15:22][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 11:15:22][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@b97c004: startup date [Fri Jul 14 11:15:22 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 11:15:22][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 11:15:22][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 11:15:22][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [ERROR] [2017-07-14 11:15:22][org.springframework.test.context.TestContextManager]Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@609db43b] to prepare test instance [mucoosSSmTest.moccesTest@55f616cf]
+  java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:319)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.jdbc.datasource.DataSourceTransactionManager#0' defined in class path resource [spring-mybatis.xml]: Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.String' to required type 'javax.sql.DataSource' for property 'dataSource'; nested exception is java.lang.IllegalStateException: Cannot convert value of type [java.lang.String] to required type [javax.sql.DataSource] for property 'dataSource': no matching editors or conversion strategy found
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type 'java.lang.String' to required type 'javax.sql.DataSource' for property 'dataSource'; nested exception is java.lang.IllegalStateException: Cannot convert value of type [java.lang.String] to required type [javax.sql.DataSource] for property 'dataSource': no matching editors or conversion strategy found
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:474)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:511)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:505)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1502)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1461)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	... 39 more
+Caused by: java.lang.IllegalStateException: Cannot convert value of type [java.lang.String] to required type [javax.sql.DataSource] for property 'dataSource': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:267)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:459)
+	... 45 more
+[INFO] [2017-07-14 11:17:13][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7907ec20: startup date [Fri Jul 14 11:17:13 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 11:17:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 11:17:13][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 11:17:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 11:17:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 11:18:19][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7907ec20: startup date [Fri Jul 14 11:18:19 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 11:18:19][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 11:18:20][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 11:18:20][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 11:18:20][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 11:19:21][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7907ec20: startup date [Fri Jul 14 11:19:21 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 11:19:21][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 11:19:21][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 11:19:21][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 11:19:21][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 11:22:27][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7907ec20: startup date [Fri Jul 14 11:22:27 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 11:22:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 11:22:27][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 11:22:27][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 11:22:27][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 12:41:49][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 12:41:49 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 12:41:49][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 12:41:49][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 16:37:27][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 16:37:27 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 16:37:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 16:37:28][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 16:38:12][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 16:38:12 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 16:38:12][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 16:38:12][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 16:38:56][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 16:38:56 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 16:38:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 16:38:56][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 16:38:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 16:38:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 16:47:20][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 16:47:20 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 16:47:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 16:47:32][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 16:47:32 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 16:47:32][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-07-14 16:49:40][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 16:49:40 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 16:49:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 16:49:40][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 16:49:40][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 16:49:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:23:37][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:23:37 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:23:37][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:23:37][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:23:37][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:23:37][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:23:37][com.huazai.service.MoccesService]obtainMocces() --  heaid  is  null
+  [INFO] [2017-07-14 17:26:15][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:26:15 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:26:15][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:26:16][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:26:16][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:26:16][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:26:16][com.huazai.service.MoccesService]obtainMocces() --  heaid  is  null
+  [INFO] [2017-07-14 17:27:01][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:27:01 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:27:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:27:01][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:27:01][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:27:01][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:27:56][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:27:56 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:27:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:27:56][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:27:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:27:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:29:37][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:29:37 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:29:37][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:29:38][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:29:38][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:29:38][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:32:05][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:32:05 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:32:05][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:32:05][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:32:05][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:32:05][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:33:41][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:33:41 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:33:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:33:41][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:33:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:33:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:36:26][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:36:26 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:36:26][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:36:26][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:36:26][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:36:26][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:36:56][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:36:56 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:36:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:36:56][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:36:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:36:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:39:40][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:39:40 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:39:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:39:40][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:39:40][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:39:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:40:04][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:40:04 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:40:04][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:40:04][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:40:04][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:40:04][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:41:34][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:41:34 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:41:34][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:41:34][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:41:34][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:41:34][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:48:07][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:48:07 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:48:07][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:48:08][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:48:08][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:48:08][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 17:49:56][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:49:56 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:49:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:49:57][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:49:57][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-07-14 17:50:25][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 17:50:25 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 17:50:25][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 17:50:25][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 17:50:25][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 17:50:25][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:02:22][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 18:02:22 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:02:22][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:02:22][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:02:22][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:02:23][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:06:27][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 18:06:27 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:06:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:06:27][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:06:27][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:06:27][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:07:00][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 18:07:00 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:07:00][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:07:00][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:07:00][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:07:00][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:07:31][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 18:07:31 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:07:31][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:07:31][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:07:31][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:07:31][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:08:25][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ae369b7: startup date [Fri Jul 14 18:08:25 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:08:25][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:08:25][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:08:25][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:08:25][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:08:34][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77a57272: startup date [Fri Jul 14 18:08:34 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:08:34][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:08:34][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:08:34][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:08:34][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:09:37][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:09:37 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:09:37][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:09:37][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:09:37][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:09:37][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:10:15][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:10:15 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:10:15][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:10:16][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:10:16][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:10:16][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:13:25][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:13:25 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:13:25][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:13:25][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:13:25][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:13:26][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:14:02][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:14:02 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:14:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:14:03][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:14:03][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:14:03][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:15:13][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:15:13 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:15:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:15:13][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:15:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:15:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:17:41][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:17:41 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:17:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:17:41][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:17:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:17:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:27:17][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:27:17 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:27:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:27:17][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:27:17][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:27:17][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:27:30][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:27:30 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:27:30][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:27:30][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:27:30][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:27:31][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:35:52][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:35:52 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:35:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:35:52][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:35:52][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:35:52][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:36:09][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:36:09 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:36:09][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:36:10][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:36:10][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:36:10][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:37:29][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:37:29 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:37:29][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:37:30][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:37:30][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:37:30][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:42:46][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77a57272: startup date [Fri Jul 14 18:42:46 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:42:47][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:42:47][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:42:47][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:42:47][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  [INFO] [2017-07-14 18:43:50][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cdbc5d3: startup date [Fri Jul 14 18:43:50 CST 2017]; root of context hierarchy
+  [INFO] [2017-07-14 18:43:50][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [springmybatis.xml]
+  [INFO] [2017-07-14 18:43:50][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [springMysql.properties]
+  [INFO] [2017-07-14 18:43:50][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [WARN] [2017-07-14 18:43:51][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]Autowired annotation is not supported on static fields: private static org.apache.log4j.Logger com.huazai.service.impl.MoccesServiceImpl.LOOGER
+  
