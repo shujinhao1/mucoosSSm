@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huazai.dao.MoodirectionMapper" >
+  <resultMap id="BaseResultMap" type="com.huazai.entity.Moodirection" >
+    <id column="dirId" property="dirid" jdbcType="INTEGER" />
+    <result column="dirName" property="dirname" jdbcType="VARCHAR" />
+    <result column="pdirId" property="pdirid" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="resultMap" type="com.huazai.entity.MoodirectionBo" >
+    <id column="dirId" property="dirid" jdbcType="INTEGER" />
+    <result column="dirName" property="dirname" jdbcType="VARCHAR" />
+    <result column="parentDirName" property="parentDirName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    dirId, dirName, pdirId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from moodirection
+    where dirId = #{dirid,jdbcType=INTEGER}
+  </select>
+  
+   <select id="selectByPrimaryList" resultMap="resultMap" parameterType="com.huazai.entity.Moodirection" >
+   select s.dirId,s.dirName,p.dirName as parentDirName from moodirection as s left JOIN moodirection as p on s.pdirId = p.dirId and p.dirId = #{pdirid}
+  </select>
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from moodirection
+    where dirId = #{dirid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.huazai.entity.Moodirection" >
+    insert into moodirection (dirId, dirName, pdirId
+      )
+    values (#{dirid,jdbcType=INTEGER}, #{dirname,jdbcType=VARCHAR}, #{pdirid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.huazai.entity.Moodirection" >
+    insert into moodirection
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="dirid != null" >
+        dirId,
+      </if>
+      <if test="dirname != null" >
+        dirName,
+      </if>
+      <if test="pdirid != null" >
+        pdirId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="dirid != null" >
+        #{dirid,jdbcType=INTEGER},
+      </if>
+      <if test="dirname != null" >
+        #{dirname,jdbcType=VARCHAR},
+      </if>
+      <if test="pdirid != null" >
+        #{pdirid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huazai.entity.Moodirection" >
+    update moodirection
+    <set >
+      <if test="dirname != null" >
+        dirName = #{dirname,jdbcType=VARCHAR},
+      </if>
+      <if test="pdirid != null" >
+        pdirId = #{pdirid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where dirId = #{dirid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huazai.entity.Moodirection" >
+    update moodirection
+    set dirName = #{dirname,jdbcType=VARCHAR},
+      pdirId = #{pdirid,jdbcType=INTEGER}
+    where dirId = #{dirid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -24,7 +24,7 @@ public class MoccesContoller {
 		List<Moocsheader> list = headerMapper.findClientList(obj);
 //		List<Moocsheader> findClientList = headerMapper.findClientList(1);1111111
 		for (Moocsheader moocsheader : list) {
-			System.out.println(moocsheader);
+			//System.out.println(moocsheader);
 		}
 		request.setAttribute("str",str);
 		return INDEXSHOW;
