@@ -22,7 +22,7 @@ public class MoccesContoller {
 		Moocsheader obj = null; 
 		String str = headerMapper.selectByPrimaryKey(1).getInsexname();
 		List<Moocsheader> list = headerMapper.findClientList(obj);
-//		List<Moocsheader> findClientList = headerMapper.findClientList(1);
+//		List<Moocsheader> findClientList = headerMapper.findClientList(1);1111111
 		for (Moocsheader moocsheader : list) {
 			System.out.println(moocsheader);
 		}
